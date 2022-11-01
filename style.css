@@ -1,0 +1,918 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --Softorange: hsl(35, 77%, 62%);
+  --Softred: hsl(5, 85%, 63%);
+  --Offwhite: hsl(36, 100%, 99%);
+  --Grayishblue: hsl(233, 8%, 79%);
+  --Darkgrayishblue: hsl(236, 13%, 42%);
+  --Verydarkblue: hsl(240, 100%, 5%);
+}
+
+/** typography **/
+
+@font-face {
+  font-family: "Inter-400";
+  src: url(./assets/fonts/static/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: url(./assets/fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Inter-ExtraBold";
+  src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
+}
+
+body {
+  font-size: 15px;
+}
+
+h1 {
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 3rem;
+  margin: 0.2em 0;
+  color: var(--Verydarkblue);
+  max-width: 70%;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--Softorange);
+  margin: 0;
+}
+
+.side-article a {
+  color: var(--Offwhite);
+  font-family: "Inter-Bold", sans-serif;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0.8em 0;
+  transition: 0.3s;
+}
+
+.side-article a:hover {
+  color: var(--Softorange);
+}
+
+.side-article p {
+  font-size: 1rem;
+  color: var(--Grayishblue);
+}
+
+main .bottom-articles .number {
+  font-size: 1.8rem;
+  font-family: "Inter-Bold", sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: var(--Grayishblue);
+}
+
+main .bottom-articles a {
+  font-family: "Inter-ExtraBold", sans-serif;
+  margin: 0.8em 0;
+  display: block;
+  font-size: 1rem;
+  color: var(--Verydarkblue);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+main .bottom-articles a:hover {
+  color: var(--Softred);
+}
+
+main .bottom-articles p {
+  font-size: 0.95rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--Darkgrayishblue);
+}
+
+p {
+  font-family: "Inter-400", sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: var(--Darkgrayishblue);
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+    max-width: 90%;
+  }
+
+  main .bottom-articles .number {
+    font-size: 1.9rem;
+    font-family: "Inter-Bold", sans-serif;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: var(--Grayishblue);
+  }
+
+  main .bottom-articles a {
+    font-family: "Inter-ExtraBold", sans-serif;
+    margin: 0.8em 0;
+    display: block;
+    font-size: 1.1rem;
+    color: var(--Verydarkblue);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  main .bottom-articles p {
+    font-size: 0.94rem;
+    margin: 0.8em 0;
+    color: var(--Darkgrayishblue);
+  }
+}
+
+/** layout **/
+
+body {
+  padding: 0 5em;
+}
+
+header {
+  background-color: transparent;
+  grid-area: header;
+}
+
+ul {
+  padding: 1em 0;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+}
+
+ul .brand-logo {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+}
+
+ul .side {
+  float: right;
+}
+
+ul .side li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--Darkgrayishblue);
+  font-family: "Inter-400", sans-serif;
+  padding: 1.2em 1em;
+  transition: 0.3s;
+}
+
+.burger-icon {
+  display: none;
+}
+
+ul li a:hover {
+  color: var(--Softred);
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "cover cover myArea"
+    "bottomArea bottomArea bottomArea";
+  gap: 1.2em;
+}
+
+main .cover {
+  width: 100%;
+  padding: 0 0;
+  grid-area: cover;
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "picture picture"
+    ". .";
+  grid-template-columns: 50% 50%;
+}
+
+main .cover .info-container {
+  padding: 0;
+  text-align: start;
+}
+
+main .cover .info-container button {
+  padding: 1.2em;
+  font-family: "Inter-Bold", sans-serif;
+  text-transform: uppercase;
+  border: 0;
+  background-color: var(--Softred);
+  width: 50%;
+  color: white;
+  margin-top: 2em;
+  letter-spacing: 0.2em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+main .cover .info-container button:hover {
+  background-color: var(--Verydarkblue);
+}
+
+main .cover picture {
+  grid-area: picture;
+}
+
+main .cover img {
+  max-width: 100%;
+}
+
+main .new {
+  grid-area: myArea;
+  width: auto;
+  margin: 0;
+  background-color: var(--Verydarkblue);
+  padding: 1.3em 1.5em;
+}
+
+.side-article {
+  padding: 0.7em 0;
+}
+
+hr {
+  height: 0.03px;
+}
+
+main .bottom-layout {
+  display: grid;
+  grid-area: bottomArea;
+  grid-auto-columns: 31%;
+  grid-auto-flow: column;
+  column-gap: 1.5em;
+}
+
+main .bottom-articles {
+  display: flex;
+  height: 50%;
+  margin-top: 1em;
+}
+
+main .bottom-articles .image-article {
+  max-width: 100%;
+  margin-right: 1em;
+}
+
+.backdrop {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0 1em;
+  }
+
+  header {
+    background-color: transparent;
+    grid-area: header;
+  }
+
+  ul {
+    padding: 1em 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  ul .brand-logo {
+    float: left;
+  }
+
+  li {
+    list-style-type: none;
+    float: right;
+  }
+
+  li a {
+    display: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Inter-400", sans-serif;
+    padding: 1.2em 1em;
+    transition: 0.3s;
+  }
+
+  .burger-icon {
+    display: block;
+    padding: 1em 0;
+  }
+
+  main {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "header"
+      "cover"
+      "myArea"
+      "bottomArea";
+    row-gap: 1.5em;
+  }
+
+  /** sidebar **/
+
+  #backdrop:target {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    justify-content: right;
+    height: 100%;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    padding: 1em;
+    align-items: flex-start;
+    background-color: white;
+    text-align: start;
+  }
+
+  .sidebar ul {
+    width: 100%;
+  }
+
+  .sidebar li {
+    float: none;
+  }
+
+  .sidebar li a {
+    display: block;
+    text-align: start;
+  }
+
+  .sidebar .close-btn a {
+    text-align: end;
+    padding: 0;
+  }
+
+  .sidebar .close-btn {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+
+  main .cover {
+    width: 100%;
+    padding: 0 0;
+    grid-area: cover;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+      "picture"
+      "."
+      ".";
+    grid-template-columns: 100%;
+  }
+
+  main .cover picture {
+    grid-area: picture;
+  }
+
+  main .cover img {
+    max-width: 100%;
+  }
+
+  main .cover .info-container button {
+    margin-top: 1em;
+  }
+
+  main .new {
+    grid-area: myArea;
+    width: auto;
+    background-color: var(--Verydarkblue);
+    padding: 1.3em 1.5em;
+    margin: 2em 0;
+  }
+
+  main .bottom-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .side-article {
+    padding: 0.7em 0;
+  }
+
+  hr {
+    height: 0.03px;
+  }
+
+  main .bottom-articles {
+    display: flex;
+    height: 18%;
+  }
+
+  main .bottom-articles .image-article {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0 1em;
+  }
+
+  header {
+    background-color: transparent;
+    grid-area: header;
+  }
+
+  ul {
+    padding: 1em 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  ul .brand-logo {
+    float: left;
+  }
+
+  ul .side {
+    display: none;
+  }
+
+  li {
+    list-style-type: none;
+    float: right;
+  }
+
+  li a {
+    display: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Inter-400", sans-serif;
+    padding: 1.2em 1em;
+    transition: 0.3s;
+  }
+
+  .burger-icon {
+    display: block;
+    padding: 1em 0;
+  }
+
+  main {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "header"
+      "cover"
+      "myArea"
+      "bottomArea";
+    row-gap: 1.5em;
+  }
+
+  /** sidebar **/
+
+  #backdrop:target {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    justify-content: right;
+    height: 100%;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    padding: 1em;
+    align-items: flex-start;
+    background-color: white;
+    text-align: start;
+  }
+
+  .sidebar ul {
+    width: 100%;
+  }
+
+  .sidebar li {
+    float: none;
+  }
+
+  .sidebar li a {
+    display: block;
+    text-align: start;
+  }
+
+  .sidebar .close-btn a {
+    text-align: end;
+    padding: 0;
+  }
+
+  .sidebar .close-btn {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+
+  main .cover {
+    width: 100%;
+    padding: 0 0;
+    grid-area: cover;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+      "picture"
+      "."
+      ".";
+    grid-template-columns: 100%;
+  }
+
+  main .cover picture {
+    grid-area: picture;
+  }
+
+  main .cover img {
+    max-width: 100%;
+  }
+
+  main .cover .info-container button {
+    margin-top: 1em;
+  }
+
+  main .new {
+    grid-area: myArea;
+    width: auto;
+    background-color: var(--Verydarkblue);
+    padding: 1.3em 1.5em;
+    margin: 2em 0;
+  }
+
+  main .bottom-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .side-article {
+    padding: 0.7em 0;
+  }
+
+  hr {
+    height: 0.03px;
+  }
+
+  main .bottom-articles {
+    display: flex;
+    height: 18%;
+  }
+
+  main .bottom-articles .image-article {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 0 1em;
+  }
+
+  header {
+    background-color: transparent;
+    grid-area: header;
+  }
+
+  ul {
+    padding: 1em 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  ul .brand-logo {
+    float: left;
+  }
+
+  li {
+    list-style-type: none;
+    float: right;
+  }
+
+  li a {
+    display: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Inter-400", sans-serif;
+    padding: 1.2em 1em;
+    transition: 0.3s;
+  }
+
+  .burger-icon {
+    display: block;
+    padding: 1em 0;
+  }
+
+  main {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "header"
+      "cover"
+      "myArea"
+      "bottomArea";
+    row-gap: 1.5em;
+  }
+
+  /** sidebar **/
+
+  #backdrop:target {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    justify-content: right;
+    height: 100%;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    padding: 1em;
+    align-items: flex-start;
+    background-color: white;
+    text-align: start;
+  }
+
+  .sidebar ul {
+    width: 100%;
+  }
+
+  .sidebar li {
+    float: none;
+  }
+
+  .sidebar li a {
+    display: block;
+    text-align: start;
+  }
+
+  .sidebar .close-btn a {
+    text-align: end;
+    padding: 0;
+  }
+
+  .sidebar .close-btn {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+
+  main .cover {
+    width: 100%;
+    padding: 0 0;
+    grid-area: cover;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+      "picture"
+      "."
+      ".";
+    grid-template-columns: 100%;
+  }
+
+  main .cover picture {
+    grid-area: picture;
+  }
+
+  main .cover img {
+    max-width: 100%;
+  }
+
+  main .cover .info-container button {
+    margin-top: 1em;
+  }
+
+  main .new {
+    grid-area: myArea;
+    width: auto;
+    background-color: var(--Verydarkblue);
+    padding: 1.3em 1.5em;
+    margin: 2em 0;
+  }
+
+  main .bottom-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .side-article {
+    padding: 0.7em 0;
+  }
+
+  hr {
+    height: 0.03px;
+  }
+
+  main .bottom-articles {
+    display: flex;
+    height: 18%;
+  }
+
+  main .bottom-articles .image-article {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    padding: 0 1em;
+  }
+
+  header {
+    background-color: transparent;
+    grid-area: header;
+  }
+
+  ul .side {
+    display: none;
+  }
+
+  ul {
+    padding: 1em 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  ul .brand-logo {
+    float: left;
+  }
+
+  li {
+    list-style-type: none;
+    float: right;
+  }
+
+  li a {
+    display: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Inter-400", sans-serif;
+    padding: 1.2em 1em;
+    transition: 0.3s;
+  }
+
+  .burger-icon {
+    display: block;
+    padding: 1em 0;
+  }
+
+  main {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "header"
+      "cover"
+      "myArea"
+      "bottomArea";
+    row-gap: 1.5em;
+  }
+
+  /** sidebar **/
+
+  #backdrop:target {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    justify-content: right;
+    height: 100%;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    padding: 1em;
+    align-items: flex-start;
+    background-color: white;
+    text-align: start;
+  }
+
+  .sidebar ul {
+    width: 100%;
+  }
+
+  .sidebar li {
+    float: none;
+  }
+
+  .sidebar li a {
+    display: block;
+    text-align: start;
+  }
+
+  .sidebar .close-btn a {
+    text-align: end;
+    padding: 0;
+  }
+
+  .sidebar .close-btn {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+
+  main .cover {
+    width: 100%;
+    padding: 0 0;
+    grid-area: cover;
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+      "picture"
+      "."
+      ".";
+    grid-template-columns: 100%;
+  }
+
+  main .cover picture {
+    grid-area: picture;
+  }
+
+  main .cover img {
+    max-width: 100%;
+  }
+
+  main .cover .info-container button {
+    margin-top: 1em;
+  }
+
+  main .new {
+    grid-area: myArea;
+    width: auto;
+    background-color: var(--Verydarkblue);
+    padding: 1.3em 1.5em;
+    margin: 2em 0;
+  }
+
+  main .bottom-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .side-article {
+    padding: 0.7em 0;
+  }
+
+  hr {
+    height: 0.03px;
+  }
+
+  main .bottom-articles {
+    display: flex;
+    height: 18%;
+  }
+
+  main .bottom-articles .image-article {
+    max-width: 100%;
+    margin-right: 1em;
+  }
+}
