@@ -143,30 +143,29 @@ body {
 header {
   background-color: transparent;
   grid-area: header;
+  padding: 0;
 }
 
-ul {
+nav {
   padding: 1em 0;
   height: auto;
   margin: 0;
   overflow: hidden;
 }
 
-ul .brand-logo {
-  float: left;
-}
-
-li {
+ul {
   list-style-type: none;
+  padding: 0;
+  float: right;
+  margin: 0;
+}
+
+nav ul li {
   float: left;
 }
 
-ul .side {
-  float: right;
-}
-
-ul .side li a {
-  display: block;
+ul li a {
+  display: inline-block;
   text-align: center;
   text-decoration: none;
   color: var(--Darkgrayishblue);
@@ -301,7 +300,6 @@ main .bottom-articles .image-article {
   }
 
   li a {
-    display: none;
     text-align: center;
     text-decoration: none;
     color: black;
@@ -310,7 +308,7 @@ main .bottom-articles .image-article {
     transition: 0.3s;
   }
 
-  .burger-icon {
+  ul .burger-icon {
     display: block;
     padding: 1em 0;
   }
@@ -442,40 +440,40 @@ main .bottom-articles .image-article {
     grid-area: header;
   }
 
-  ul {
-    padding: 1em 0;
+  nav {
+    padding: 0;
+    padding-top: 1em;
     height: auto;
     margin: 0;
     overflow: hidden;
-    position: relative;
   }
 
-  ul .brand-logo {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    float: right;
+    margin: 0;
+
+    height: auto;
+  }
+
+  nav ul li {
     float: left;
   }
 
-  ul .side {
-    display: none;
-  }
-
-  li {
-    list-style-type: none;
-    float: right;
-  }
-
-  li a {
+  ul li a {
     display: none;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: var(--Darkgrayishblue);
     font-family: "Inter-400", sans-serif;
     padding: 1.2em 1em;
     transition: 0.3s;
   }
 
-  .burger-icon {
-    display: block;
-    padding: 1em 0;
+  ul .burger-icon {
+    display: inline;
+    padding: 0;
   }
 
   main {
@@ -764,39 +762,38 @@ main .bottom-articles .image-article {
     grid-area: header;
   }
 
-  ul .side {
-    display: none;
-  }
-
-  ul {
-    padding: 1em 0;
+  nav {
+    padding: 0;
+    padding-top: 1em;
     height: auto;
     margin: 0;
     overflow: hidden;
-    position: relative;
   }
 
-  ul .brand-logo {
+  ul {
+    list-style-type: none;
+    padding: 1em 0;
+    float: right;
+    margin: 0;
+    height: auto;
+  }
+
+  nav ul li {
     float: left;
   }
 
-  li {
-    list-style-type: none;
-    float: right;
-  }
-
-  li a {
+  ul li a {
     display: none;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: var(--Darkgrayishblue);
     font-family: "Inter-400", sans-serif;
     padding: 1.2em 1em;
     transition: 0.3s;
   }
 
-  .burger-icon {
-    display: block;
+  ul .burger-icon {
+    display: inline;
     padding: 1em 0;
   }
 
